@@ -24,11 +24,50 @@
     </header>
 
     <main>
+
         <h3>Welcome to Wan Shi Tong's Library!</h3>
         <p>
             This is a place where you can find knowledge and wisdom from all over the world.
             Here you can add your favorite books and keep track of your reading progress.
         </p>
+        <p>
+            Use the buttons above to add a new book or view your collection of books.
+            Happy reading!
+        </p>
+        <section>
+            <h4>Book Collection</h4>
+            <form id="bookForm">
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="pages">Pages: </label>
+                <input type="number" id="pages" name="pages" min="1" required>
+
+                <label for="read">Read: 
+                    <select id="read" name="read">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </label> 
+                <nav>
+                    <ul>
+                        <button type="submit">Add Book</button>
+                        <button type="button" class="cancel">Cancel</button>
+                    </ul>
+                </nav>
+            </form>
+        </section> 
+        <section id="bookList">
+            <h4>My Books</h4>
+            <ul id="books">
+                <!-- Book items will be dynamically added here -->
+            </ul>
+
+        </section>
+
     </main>
 
     <footer>
