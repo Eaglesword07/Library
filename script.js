@@ -32,6 +32,15 @@ const addBookToLibrary = (title, author, pages, read) => {
     myLibrary.push(book);
 }
 
+const removeBookFromLibrary = (id) => {
+    const index = myLibrary.findIndex(book => book,id === id);
+    if (index !== -1) {
+        myLibrary.splice(index, 1);
+    } else {
+        console.error(`Book not found`);
+    }
+}
+
 const displaybooks = () => {
     myLibrary.forEach((book) => {
         const bookInfo = document.createElement('div');
@@ -50,6 +59,7 @@ const displaybooks = () => {
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
 addBookToLibrary('The Catcher in the Rye', 'J.D. Salinger', 277, false);
+addBookToLibrary("1984", "George Orwell", 328, false)
 displaybooks();
 
 
