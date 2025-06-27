@@ -12,7 +12,7 @@ function Books (title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;  
+    this.read = read;
 }
 
 Books.prototype.isRead = function() {
@@ -27,15 +27,12 @@ Books.prototype.info = function() {
 //
 // Add books to the library and display them
 //
-function addBookToLibrary(title, author, pages, read) {
+const addBookToLibrary = (title, author, pages, read) => {
     const book = new Books(title, author, pages, read);
     myLibrary.push(book);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
-addBookToLibrary('The Catcher in the Rye', 'J.D. Salinger', 277, false);
-
-function displaybooks () {
+const displaybooks = () => {
     myLibrary.forEach((book) => {
         const bookInfo = document.createElement('div');
         bookInfo.classList.add('book-info');
@@ -50,3 +47,9 @@ function displaybooks () {
         bookList.appendChild(bookInfo);
     })
 }
+
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
+addBookToLibrary('The Catcher in the Rye', 'J.D. Salinger', 277, false);
+displaybooks();
+
+
